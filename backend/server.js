@@ -56,10 +56,14 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`=========================================`);
-  console.log(`🚀 University Portal Server is active!`);
-  console.log(`📡 URL: http://localhost:${PORT}`);
-  console.log(`🩺 Health check: http://localhost:${PORT}/api/health`);
-  console.log(`=========================================`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`=========================================`);
+    console.log(`🚀 University Portal Server is active!`);
+    console.log(`📡 URL: http://localhost:${PORT}`);
+    console.log(`🩺 Health check: http://localhost:${PORT}/api/health`);
+    console.log(`=========================================`);
+  });
+}
+
+module.exports = app;
