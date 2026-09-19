@@ -7,7 +7,8 @@
         "backend": {
             "root": "backend/",
             "framework": "express",
-            "entrypoint": "server:app"
+            "runtime": "node",
+            "entrypoint": "server.js"
         }
     },
     "rewrites": [
